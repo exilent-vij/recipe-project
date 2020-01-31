@@ -13,6 +13,7 @@
     <tr>
         <th> Id</th>
         <th> Servings</th>
+        <th> View </th>
     </tr>
     </thead>
     <tbody>
@@ -22,6 +23,9 @@
     <tr th:each="recipe : ${recipes}">
         <td><span th:text="${recipe.id}"> Id </span></td>
         <td><span th:text="${recipe.servings}"> Servings </span></td>
+        <td>
+            <a th:href="@{'/recipe/find/' + ${recipe.id}}">View</a>
+        </td>
     </tr>
     </tbody>
 </table>
