@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> Id</th>
+        <th> CATEGORY</th>
+        <th> RECIPE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${categoryDAO.empty}">
+        <td colspan="2"> there is no categoryDAO Available</td>
+    </tr>
+    <tr th:each="categoryDAO : ${categoryDAO}">
+        <td><span th:text="${categoryDAO.id}"> Id </span></td>
+        <td><span th:text="${categoryDAO.catName}"> CATEGORY </span></td>
+        <td><span th:text="${categoryDAO.recpName}"> RECIPE </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
