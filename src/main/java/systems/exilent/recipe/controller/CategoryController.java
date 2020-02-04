@@ -11,10 +11,12 @@ import systems.exilent.recipe.repository.CategoryRepository;
 import java.util.Optional;
 
 @RestController
+
 @RequestMapping("/category")
 public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
+
 
 
     @GetMapping("/show")
@@ -37,8 +39,9 @@ public class CategoryController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(category.get(), HttpStatus.OK);
-    }
 
+
+    }
 
 }
 

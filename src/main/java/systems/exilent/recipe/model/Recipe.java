@@ -1,8 +1,14 @@
 package systems.exilent.recipe.model;
 
 
+
 import javax.persistence.*;
-import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 
 @Entity
 public class Recipe {
@@ -26,6 +32,7 @@ public class Recipe {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cat_id")
     private Category category;
+
 
     public String getDescription() {
         return description;

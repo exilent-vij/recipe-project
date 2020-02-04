@@ -1,7 +1,14 @@
 package systems.exilent.recipe.model;
 
+
 import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 
 @Entity
 public class Category {
@@ -37,5 +44,4 @@ public class Category {
     public void setCatName(String catName) {
         this.catName = catName;
     }
-
 }
