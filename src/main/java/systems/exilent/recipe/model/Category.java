@@ -18,7 +18,7 @@ public class Category {
     private Long id;
     private String catName;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
     private List<Recipe> recipes;
 
     public List<Recipe> getRecipes() {

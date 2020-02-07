@@ -1,45 +1,26 @@
-package systems.exilent.recipe.model;
+package systems.exilent.recipe.dto;
 
+public class CreateRecipeDTO {
 
-import javax.persistence.*;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-
-@Entity
-public class Recipe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "desc")
     private String description;
-    @Column(name = "preptime")
     private int prepTime;
-    @Column(name = "cooktime")
     private int cookTime;
-    @Column(name = "serving")
     private int servings;
-    @Column(name = "source")
     private String source;
-    @Column(name = "direction")
+
+    public long getCat_Id() {
+        return cat_Id;
+    }
+
+    public void setCat_Id(long cat_Id) {
+        this.cat_Id = cat_Id;
+    }
+
     private String directions;
-    @Column(name = "url")
     private String url;
+    private long cat_Id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cat_id")
-    private Category category;
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 
     public String getDescription() {
         return description;
@@ -95,13 +76,5 @@ public class Recipe {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }
